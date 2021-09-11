@@ -1,4 +1,4 @@
-package net.lucode.hackware.magicindicatordemo.ext.titles;
+package net.lucode.hackware.magicindicator.titles;
 
 import android.content.Context;
 

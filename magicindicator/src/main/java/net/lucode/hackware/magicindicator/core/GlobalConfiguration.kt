@@ -1,7 +1,7 @@
-package com.hunliji.ext_master.core
+package net.lucode.hackware.magicindicator.core
 
 import android.app.Application
-import com.hunliji.integration_mw.ConfigModule
+import com.xueyu.applicationproxy.ConfigModule
 import kotlin.properties.Delegates
 
 /**
