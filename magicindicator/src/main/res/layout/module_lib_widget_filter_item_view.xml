@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    tools:ignore="UseCompoundDrawables">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:id="@+id/widget_lib_tv_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:lines="1"
+            android:singleLine="true"
+            android:textColor="@color/colorBlack2"
+            android:textSize="14sp"
+            tools:text="间格区间价格区间格区间价格区间" />
+
+        <ImageView
+            android:id="@+id/widget_lib_iv_price"
+            android:layout_width="8dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/module_lib_widget_icon_arrow_down_black3_18_9" />
+    </LinearLayout>
+</LinearLayout>
