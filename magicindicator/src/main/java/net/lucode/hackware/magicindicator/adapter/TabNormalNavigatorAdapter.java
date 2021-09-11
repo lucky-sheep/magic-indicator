@@ -24,7 +24,6 @@ import java.util.List;
 
 import androidx.core.content.ContextCompat;
 
-import static net.lucode.hackware.magicindicator.core.GlobalConfigurationKt.app$delegate;
 import static net.lucode.hackware.magicindicator.core.GlobalConfigurationKt.getApp;
 
 /**
