@@ -1,6 +1,5 @@
 package net.lucode.hackware.magicindicator.listener;
 
-import android.view.View;
 import android.widget.TextView;
 
 /**
