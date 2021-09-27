@@ -13,6 +13,7 @@ import android.widget.TextView;
 import net.lucode.hackware.magicindicator.R;
 import net.lucode.hackware.magicindicator.buildins.UIUtil;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.CommonPagerTitleView;
+import net.lucode.hackware.magicindicator.listener.OnSetParamTabListener;
 import net.lucode.hackware.magicindicator.listener.OnTabSelectListener;
 import net.lucode.hackware.magicindicator.listener.OnTrackTabListener;
 
@@ -36,6 +37,7 @@ public class TabMarkNavigatorAdapter extends CommonNavigatorAdapter {
     private boolean isBoldNormal;
     private OnTabSelectListener listener;
     private OnTrackTabListener trackTabListener;
+    private OnSetParamTabListener onSetParamTabListener;
 
     private TabMarkNavigatorAdapter(List<String> list,
                                     int marginLeftAndRight,
@@ -49,12 +51,14 @@ public class TabMarkNavigatorAdapter extends CommonNavigatorAdapter {
                                     int textPaddingVertical,
                                     int textPaddingHorizontal,
                                     OnTabSelectListener listener,
-                                    OnTrackTabListener trackTabListener) {
+                                    OnTrackTabListener trackTabListener,
+                                    OnSetParamTabListener onSetParamTabListener) {
 
         this.list.clear();
         this.list.addAll(list);
         this.listener = listener;
         this.trackTabListener = trackTabListener;
+        this.onSetParamTabListener = onSetParamTabListener;
         this.mSelectedColor = selectColor;
         this.mNormalColor = normalColor;
         this.textSize = textSize;
@@ -94,6 +98,9 @@ public class TabMarkNavigatorAdapter extends CommonNavigatorAdapter {
         TextView textView = customLayout.findViewById(R.id.text);
         int padding1 = UIUtil.dip2px(context, textPaddingVertical);
         int padding2 = UIUtil.dip2px(context, textPaddingHorizontal);
+        if (onSetParamTabListener != null){
+            onSetParamTabListener.setParam(textView,index);
+        }
         textView.setPadding(padding2, padding1, padding2, padding1);
         textView.setTextSize(textSize);
         textView.setText(list.get(index));
@@ -168,6 +175,7 @@ public class TabMarkNavigatorAdapter extends CommonNavigatorAdapter {
         private int textPaddingHorizontal = 10;
         private OnTabSelectListener listener;
         private OnTrackTabListener trackTabListener;
+        private OnSetParamTabListener onSetParamTabListener;
         private boolean isBold = false;
         private boolean isBoldNormal = false;
         private List<String> list = new ArrayList<>();
@@ -231,6 +239,10 @@ public class TabMarkNavigatorAdapter extends CommonNavigatorAdapter {
             this.trackTabListener = listener;
             return this;
         }
+        public TabMarkNavigatorAdapter.Builder SetParamTabListener(OnSetParamTabListener listener) {
+            this.onSetParamTabListener = listener;
+            return this;
+        }
 
         public TabMarkNavigatorAdapter.Builder setTextPaddingVertical(int textPaddingVertical) {
             this.textPaddingVertical = textPaddingVertical;
@@ -256,7 +268,8 @@ public class TabMarkNavigatorAdapter extends CommonNavigatorAdapter {
                     textPaddingVertical,
                     textPaddingHorizontal,
                     listener,
-                    trackTabListener
+                    trackTabListener,
+                    onSetParamTabListener
             );
         }
     }
