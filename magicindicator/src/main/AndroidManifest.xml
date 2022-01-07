@@ -1,1 +1,17 @@
-<manifest package="net.lucode.hackware.magicindicator" />
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="net.lucode.hackware.magicindicator"
+android:versionCode="54"
+android:versionName="1.0.54" >
+
+<uses-sdk
+    android:minSdkVersion="16"
+    android:targetSdkVersion="28" />
+
+<application>
+    <meta-data
+        android:name="net.lucode.hackware.magicindicator.core.GlobalConfiguration"
+        android:value="ConfigModule" />
+</application>
+
+</manifest>
